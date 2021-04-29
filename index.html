@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head section of website -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="css/phone.css">
+    <script src="script/script.js"></script>
+    <title>Royal Cafe</title> <!-- Title for website -->
+    <link rel="icon" href="images/logo.png" type="image/x-icon" /> <!-- Title Icon for website -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&display=swap" rel="stylesheet">
+</head>
+<!-- Body section of website -->
+
+<body>
+    <!-- Header section for navigation bar -->
+    <header class="navigation">
+        <!-- Navbar logo -->
+        <div class="left">   
+            <img src="images/logo.png" alt="logo">    
+        </div>
+        <div class="right">
+            <div class="toggle" onclick="toggleMenu()"></div>       <!-- Hamburger Navigation menu -->
+            <!-- Navigatin menus  -->
+                <ul class="navbar">
+                <li><a href="#home" class="active" onclick="menuSelect(this)">HOME</a></li>
+                <li><a href="#about" onclick="menuSelect(this)">ABOUT</a></li>
+                <li><a href="#menu" onclick="menuSelect(this)">FOOD</a></li>
+                <li><a href="#chef" onclick="menuSelect(this)">CHEF</a></li>
+                <li><a href="#contact" onclick="menuSelect(this)">CONTACT US</a></li>
+                <li><a href="#" class="mode" onclick="modeToggle(this)">NIGHT MODE</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Home section  -->
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to Royal Cafe</h2>
+            <button class="btn">Book your table</button>
+            <p>Feel refresh by tasting our coffee...</p>
+        </div>
+        <!-- Home background -->
+        <div class="gallery">
+            <img src="images/bg1.jpg" alt="cafe_bg1">
+            <img src="images/bg2.jpg" alt="cafe_bg2">
+        </div>
+    </section>
+    <!-- About section  -->
+    <section id="about">
+        <h1 class="heading">About Us</h1>
+        <div class="info">
+            <h2>We Leave A Delicious Memory for you</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis beatae illum aperiam qui, eaque
+                nesciunt fuga esse veritatis minus, voluptatum nulla. Molestias, eaque laborum! Inventore, nulla
+                facilis. Sunt, eveniet deserunt!</p>
+        </div>
+        <!-- Special food gallery  -->
+        <div class="picture">
+            <h2 style="width: 100%;">Cafe's Speciality :</h2>
+            <div class="food"><img src="images/food1.jpg" alt="coffee">
+                <h2>Coffee</h2>
+            </div>
+            <div class="food"><img src="images/food2.jpg" alt="donuts">
+                <h2>Donuts</h2>
+            </div>
+            <div class="food"><img src="images/food3.jpg" alt="brownie">
+                <h2>Brownie</h2>
+            </div>
+            <div class="food"><img src="images/food4.jpg" alt="pancakes">
+                <h2>Pancakes</h2>
+            </div>
+        </div>
+    </section>
+    <!-- Food Menu Section  -->
+    <section id="menu">
+        <h1 class="heading">Food Menus</h1>
+        <!-- Food Menu List with categories -->
+        <div class="menu-list">
+            <div class="menu-box"><img src="images/food4.jpg" alt="pancakes">
+                <h2>Category</h2>
+                <div>
+                    <h3>Food1</h3>
+                    <h3>Food2</h3>
+                    <h3>Food3</h3>
+                    <h3>Food4</h3>
+                </div>
+            </div>
+            <div class="menu-box"><img src="images/food4.jpg" alt="pancakes">
+                <h2>Category</h2>
+                <div>
+                    <h3>Food1</h3>
+                    <h3>Food2</h3>
+                    <h3>Food3</h3>
+                    <h3>Food4</h3>
+                </div>
+            </div>
+            <div class="menu-box"><img src="images/food4.jpg" alt="pancakes">
+                <h2>Category</h2>
+                <div>
+                    <h3>Food1</h3>
+                    <h3>Food2</h3>
+                    <h3>Food3</h3>
+                    <h3>Food4</h3>
+                </div>
+            </div>
+            <div class="menu-box"><img src="images/food4.jpg" alt="pancakes">
+                <h2>Category</h2>
+                <div>
+                    <h3>Food1</h3>
+                    <h3>Food2</h3>
+                    <h3>Food3</h3>
+                    <h3>Food4</h3>
+                </div>
+            </div>
+    </section>
+    <!-- Chef details section  -->
+    <section id="chef">
+        <h1 class="heading">Chefs</h1>
+        <!-- Chef name with short detail -->
+        <div class="chef-list">
+            <div class="chef-box">
+                <img src="images/chef1.jpg" alt="">
+                <div>
+                    <h1>CHEF NAME</h1>
+                    <p>Short details about the chefs</p>
+                </div>
+            </div>
+            <div class="chef-box">
+                <img src="images/chef2.jpg" alt="">
+                <div>
+                    <h1>CHEF NAME</h1>
+                    <p>Short details about the chefs</p>
+                </div>
+            </div>
+            <div class="chef-box" style="flex-shrink: 2;">
+                <img src="images/chef3.jpg" alt="">
+                <div>
+                    <h1>CHEF NAME</h1>
+                    <p>Short details about the chefs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact and details section  -->
+    <section id="contact">
+        <h1 class="heading">Contact us</h1>
+        <!-- Seat booking form -->
+        <div class="register">
+            <fieldset>
+                <legend>Book Your Table</legend>
+                <form action="">
+                    <div class="inputs">
+                        <input type="text" placeholder="Enter Your Name" required>
+                        <input type="select" placeholder="City" required>
+                    </div>
+                    <div class="inputs">
+                        <input type="datetime-local" placeholder="Date and Time" required>
+                        <input type="number" placeholder="Number of seats" required>
+                    </div>
+                    <div class="inputs">
+                        <input type="email" placeholder="E-mail">
+                        <input type="tel" placeholder="Phone" required>
+                    </div>
+                    <div class="inputs">
+                        <textarea placeholder="Enter your questions here..." cols="60" rows="5"></textarea>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Book Seat" class="btn" onclick="registerSeat()">
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <!-- Details contain address,phone and email  -->
+        <div class="details">
+            <fieldset class="detail-box">
+                <legend>Address</legend>
+                <h2>At Post Addres<br>Address here , Address here<br>Tal.: ______ ,Dist.:_______</h1>
+            </fieldset>
+            <fieldset class="detail-box">
+                <legend>E-mail</legend>
+                <h2>xyz@gmail.com</h2>
+                <h2>abc@yahoo.com</h2>
+            </fieldset>
+            <fieldset class="detail-box">
+                <legend>Phone</legend>
+                <h2>Phone:1234567890/0987654321</h2>
+                <h2>Tel:245-369</h2>
+            </fieldset>
+        </div>
+    </section>
+    <!-- Footer for website  -->
+    <footer>
+        <h3>All &copy Copyright reserved by www.royalcafe.com</h3>
+    </footer>
+</body>
+
+</html>

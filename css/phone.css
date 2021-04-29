@@ -1,0 +1,68 @@
+/* CSS for phone screen(width<600px) */
+.navbar{
+    display: none;
+}
+.toggle{
+    display: flex;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    background-color: transparent;
+    color: black;
+}
+.gallery{
+    width: 100%;
+    opacity: 0.3;
+}
+#about{
+    flex-direction: column;
+}
+.info{
+    position: relative;
+    top: 50px;
+    width: 90%;
+}
+.picture{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    margin: 10px;
+    top: 50px;
+    width: 90%;
+}
+.picture h2{
+    text-align: center;
+    grid-column: 1 / span 2;
+}
+.menu-box{
+    width: 100%;
+}
+.menu-box h2{
+    font-size: 15px;
+    margin: 10px 10px;
+    width: 25%;
+}
+.menu-box h3{
+    margin-right: 15px;
+    text-align: center;
+}
+
+.register{
+    width: 90%;
+    float: none;
+    margin: 20px;
+    padding: 20px;
+}
+.heading{
+    font-size: 30px;
+}
+.heading::before{
+    content: "----";
+}
+.heading::after{
+    content: "----";
+}
+footer h3{
+    font-size: 15px;
+}

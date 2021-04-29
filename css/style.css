@@ -1,0 +1,611 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+    --toggleColor: white;
+    --toggleTextColor: black;
+    --toggleBgColor: rgb(224, 224, 224);
+}
+body{
+    color: var(--toggleTextColor);
+    background-color: var(--toggleBgColor);
+}
+.navigation{
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 83px;
+    position: fixed;
+    z-index: 20;
+    background-color: rgba(61, 253, 36, 0.24);
+}
+.left{
+    display: flex;
+    top: 10px;
+    left: 45px;
+}
+.right{
+    display: flex;
+    position: fixed;
+    top: 10px;
+    right: 35px;
+    padding: 15px;
+    
+}
+.left img{
+    margin: 17px;
+    width: 54px;
+    height: 54px;
+}
+.toggle{
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url('images/menu.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    z-index: 10;
+}
+.toggle.active{
+    background: url('images/cross.png');
+}
+.navbar{
+    display: flex;
+}
+.navbar.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: cadetblue; */
+    background-color: rgba(40, 94, 33, 0.95);
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+}
+.navbar.active li{
+    padding: 20px;
+    margin-top: 10px;
+}
+.navbar li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 5px;
+}
+.navbar a{
+    text-decoration: none;
+    color: var(--toggleTextColor);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.navbar a:hover{
+    background-color: rgb(46 167 92);
+    color: var(--toggleColor);
+}
+.navbar a.active{
+    text-decoration: underline;
+}
+
+
+#home{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    position: absolute;
+    width: 35%;
+    height: 650px;
+    top: 83px;
+    left: 0;
+    right: none;
+    background-color: rgb(46 167 92);
+    color: var(--toggleColor);
+    z-index: 1;
+}
+.gallery{
+    position: absolute;
+    width: 65%;
+    height: 650px;
+    top: 83px;
+    right: 0;
+    left: none;
+    z-index: -1;
+}
+
+.container h2{
+    display: block;
+    text-align: center;
+    margin-top: 181px;
+    font-size: 36px;
+}
+.container .btn{
+    display: block;
+    margin: 20px auto;
+    font-size: 20px;
+}
+.container p{
+    text-align: center;
+    font-size: 20px;
+}
+.gallery img{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 650px;
+    animation: img1-ani 10s ease 0s infinite alternate;
+    z-index: 1;
+}
+.gallery img:last-child{
+    display: flex;
+    animation: img2-ani 10s ease 0s infinite alternate;
+    z-index: 0;
+}
+#about{
+    display: flex;
+    position: relative;
+    margin-top: 90px;
+    height: 100vh;
+}
+.info{
+    position: absolute;
+    width: 30%;
+    height: auto;
+    top: 134px;
+    left: 0px;
+}
+.picture{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    position: absolute;
+    width: 70%;
+    height: auto;
+    top: 134px;
+    right: 0px;
+}
+#about h2{
+    font-family: 'Bebas Neue', cursive;
+    padding: 20px;
+    margin: 10px;
+    font-size: 30px;
+    z-index: -1;
+}
+.info p{
+    padding: 8px;
+    margin: 46px;
+    font-size: 17px;
+    font-style: italic;
+}
+.food{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 230px;
+    margin: 15px;
+    padding: 0px;
+    border: 2px solid red;
+    border-top: none;
+    border-left: none;
+    box-shadow: 10px 13px 17px green;
+}
+.food img{
+    width: 100%;
+    height: 200px;;
+}
+.food h2{
+    width: 100%;
+    text-align: center;
+    margin: 10px 70px;
+    cursor: pointer;
+    color: green;
+}
+#menu{
+    display: flex;
+    position: relative;
+    margin-top: 90px;
+    height: 100vh;
+}
+#menu .menu-list{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    top: 184px;
+    left: 0px;
+}
+#menu .menu-box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    height: 300px;
+    width: 20%;
+    margin: 15px;
+    padding: 0px;
+    border: 2px solid red;
+    border-top: none;
+    border-left: none;
+    box-shadow: 10px 13px 17px green;
+    overflow: hidden;
+    z-index: 1;
+    transition: height 1s linear;
+}
+.menu-box h3{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 2s ease 1s;
+}
+#menu .menu-box:hover{
+    height: 450px;
+}
+.menu-box img{
+    width: 100%;
+    height: 200px;
+}
+.menu-box h2{
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    width: 100%;
+    margin: 10px 40px;
+    cursor: pointer;
+    color: green;
+}
+#chef{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 90px;
+    height: 100vh;
+}
+.chef-list{
+    display: flex;
+    flex-direction: row;
+}
+.chef-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid red;
+    border-top: none;
+    border-left: none;
+    box-shadow: 10px 13px 17px green;
+}
+.chef-box img{
+    width: 100%;
+    height: 250px;
+}
+.chef-box h1{
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    padding: 5px;
+}
+.chef-box p{
+    font-style: italic;
+}
+.chef-box h1:hover,.chef-box p:hover{
+    color: rgb(46 167 92);
+}
+#contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: black;
+    position: relative;
+    margin-top: 80px;
+    height: 100vh;
+    border: 2px solid rgb(38 138 50);;
+    background-image: url('images/contact-bg.jpg');
+    background-size: cover;
+}
+#contact .heading{
+    grid-column: 1 / span 2;
+    color: black;
+}
+.register{
+    display: flex;
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+}
+.details-box{
+    width: 90%;
+}
+.register legend{
+    font-size: 25px;
+}
+.register .inputs{
+    margin: 15px;
+    padding: 5px;
+}
+.inputs input,textarea{
+    width: 45%;
+    margin: 5px;
+    padding: 9px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: var(--toggleBgColor);
+    border: 2px solid green;
+    color: green;
+}
+textarea{
+    width: 93%;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5px;
+    margin: auto;
+    width: 40%;
+}
+.submit .btn{
+    width: 70%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.detail-box{
+    width: 90%;
+    padding: 20px;
+    margin: 20px;
+}
+.detail-box legend{
+    font-size: 25px;
+}
+.detail-box  h2{
+    text-align: center;
+}
+footer{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 90px;
+    background: black;
+}
+footer h3{
+    margin-top: 20px;
+    color: green;
+}
+
+/* Media query for screen width less than 1220px */
+@media screen and (max-width: 1220px){
+    #about{
+        height: 900px;
+    }
+    #menu,#chef,#contact{
+        height: 1180px;
+    }
+    #menu .menu-list{
+        flex-direction: column;
+        width: 100%;
+        height: 900px;
+    }
+    .menu-box h2::after{
+        content: " : ";
+    }
+    #menu .menu-box{
+        flex-direction: row;
+        align-items: none;
+        height: 300px;
+        width: 90%;
+        margin: 15px;
+        padding: 0px;
+        z-index: 1;
+    }
+    #menu .menu-box:hover{
+        height: 300px;
+    }
+    #menu .menu-box div{
+        margin:0px;
+    }
+    .menu-box h3{
+        display: flex;
+        opacity: 1;
+        width: 20%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .menu-box img{
+        width: 40%;
+        height: 230px;
+    }
+    .menu-box h2{
+        width: 20%;
+    }
+    .chef-list{
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+    }
+    .chef-box{
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        width: 90%;
+    }
+    .chef-box img{
+        width: 40%;
+        height: 250px;
+    }
+    .chef-box div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    .chef-box h1{
+        width: 70%;
+    }
+    .chef-box p{
+        font-style: italic;
+    }
+    .heading{
+        font-size: 20px;
+    }
+}
+
+/* Media query for screen width less than 1072px */
+@media screen and (max-width: 1072px){
+    .navbar{
+        display: none;
+    }
+    .toggle{
+        display: flex;
+        cursor: pointer;
+    }
+    #about{
+        height: 1180px;
+    }
+    .picture .food{
+        margin: 20px 10px;
+        height: 220px;
+        width: 80%;
+    }
+    .food img{
+        height: 140px;
+    }
+    #menu .menu-box{
+        height: 200px;
+    }
+    #menu .menu-box:hover{
+        height: 200px;
+    }
+    #menu .menu-box img{
+        height: 180px;
+    }
+    #menu .menu-box div{
+        margin:0px;
+    }
+    .chef-box{
+        height: 200px;
+    }
+    .chef-box img{
+        height: 180px;
+        margin-left: 5px;
+    }
+    .chef-box h1{
+        font-family: 'Bebas Neue', cursive;
+        width: 100%;
+        padding: 5px;
+    }
+    .chef-box p{
+        font-style: italic;
+    }
+    #contact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 1380px;
+    }
+    
+    .register{
+        width: 90%;
+        float: none;
+        margin: 20px;
+        padding: 20px;
+    }
+    .details{
+        display: flex;
+        flex-direction: 40w;
+        width: 90%;
+        margin: 0px;
+    }
+    .inputs input,textarea{
+        margin: 5px;
+        padding: 9px;
+        font-size: 18px;
+        border-radius: 5px;
+        width: 90%;
+    }
+    .detail-box{
+        width: 80%;
+        font-size: 15px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .detail-box legend{
+        font-size: 15px;
+    }
+    .detail-box  h2{
+        text-align: center;
+        font-size: 15px;
+    }
+    .submit{
+        width: 70%;
+    }
+    .submit .btn{
+        width: 50%;
+    }
+}
+
+.heading::before{
+    content: "--------";
+}
+.heading::after{
+    content: "--------";
+}
+.heading{
+    font-family: 'Kiwi Maru', serif;
+    width: 100%;
+    display: flex;
+    position: relative;
+    content: " ";
+    justify-content: center;
+    padding: 30px;
+    font-size: 40px;
+    color: var(--toggleTextColor);
+    z-index: 1;
+}
+.btn{
+    padding: 10px;
+    color: rgb(46 167 92);
+    background-color: var(--toggleColor);
+    border: none;
+    border-radius: 8px;
+}
+/* Keyframes for animation */
+@keyframes img1-ani{
+    from{
+        z-index: 1;
+    }
+    to{
+        z-index: 0;
+    }
+
+}
+@keyframes img2-ani{
+    from{
+        z-index: 0;
+    }
+    to{
+        z-index: 1;
+    }
+
+}
