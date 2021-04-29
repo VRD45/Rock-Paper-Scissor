@@ -1,0 +1,96 @@
+/* css Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* css for body */
+body{
+    height: 100vh;
+    background: linear-gradient(to top ,rgb(121, 121, 226),rgb(185, 187, 221),white);
+}
+.points{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    box-shadow: 9px 6px 24px rgb(18, 93, 233);
+}
+.left,.right{
+    width: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+h1{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px auto;
+    border-radius: 15px;
+    width: 50%;
+    height: 300px;
+    box-shadow: 9px 6px 24px black;
+}
+.player,.computer{
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.computer{
+    transform: scaleX(-1);
+}
+.container .h2{
+    margin-top: 0;
+}
+.animating{
+    animation: animate 1s ease-in-out 3;
+}
+.container img{
+    width: 120px;
+    height: 120px;
+}
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+}
+.btn{
+    margin: 10px;
+    padding: 10px;
+    width: 120px;
+    border-radius: 7px;
+    outline: none;
+    font-size: 1.5em;
+    background: linear-gradient(to right,red,yellow,white);
+    box-shadow: 9px 6px 24px black;
+    cursor: pointer;
+}
+/* media query for screen less than width 769px */
+@media only screen and (max-width: 769px){
+    .container{
+        width: 80%;
+    }
+    .container img{
+        width: 90px;
+        height: 90px;
+    }
+}
+/* Keyframe animations */
+@keyframes animate{
+    0%,100%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(-50px);
+    }
+    75%{
+        transform: translateY(50px);
+    }
+}
