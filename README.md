@@ -1,2 +1,2 @@
 # Cafe-Profile
-Responsive web page for the cafe profile
+It is mini game of rock-paper-scissor for practice purpose
